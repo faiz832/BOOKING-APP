@@ -1,12 +1,18 @@
+import Header from "@/components/Header/Header";
 import Image from "next/image";
 import { IoEyeOutline, IoLocateOutline } from "react-icons/io5";
 
 const AboutPage = () => {
   return (
     <div>
+      <Header
+        image="/images/bg.jpg"
+        title="Tentang Kami"
+        subtitle="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, accusantium."
+      />
       <div className="max-w-7xl mx-auto py-20 px-4">
         <div className="grid md:grid-cols-2 gap-8">
-          <Image src="/images/bg-jpg" alt="image" width={650} height={579} />
+          <Image src="/images/bg.jpg" alt="image" width={650} height={579} />
           <div>
             <h1 className="text-5xl font-semibold text-gray-900 mb-4">
               Siapa Kita
