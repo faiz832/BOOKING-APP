@@ -1,17 +1,15 @@
-"use client";
-
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-const Navlink = () => {
+const Navlink = ({ isScrolled }: { isScrolled: boolean }) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center p-2 justify-center text-sm text-gray-500 rounded md:hidden hover:bg-gray-100"
+        className="inline-flex items-center p-2 justify-center text-sm text-gray-500 rounded md:hidden hover:bg-gray-100 cursor-pointer transition"
       >
         {!open ? <IoMenu className="size-8" /> : <IoClose className="size-8" />}
       </button>
@@ -20,11 +18,14 @@ const Navlink = () => {
           hidden: !open,
         })}
       >
-        <ul className="flex flex-col font-semibold text-sm uppercase p-4 mt-4 gap-y-2 rounded bg-gray-50 md:flex-row md:items-center md:space-x-10 md:p-0 md:mt-0 md:border-0 md:bg-white">
+        <ul className="flex flex-col font-semibold text-sm uppercase p-4 mt-4 gap-y-2 rounded bg-gray-50 md:flex-row md:items-center md:space-x-10 md:p-0 md:mt-0 md:border-0 md:bg-transparent">
           <li>
             <Link
               href="/about"
-              className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0"
+              className={clsx(
+                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
+                isScrolled ? "text-gray-800" : "text-gray-100"
+              )}
             >
               Tentang
             </Link>
@@ -32,7 +33,10 @@ const Navlink = () => {
           <li>
             <Link
               href="/camp"
-              className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0"
+              className={clsx(
+                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
+                isScrolled ? "text-gray-800" : "text-gray-100"
+              )}
             >
               Camp
             </Link>
@@ -40,7 +44,10 @@ const Navlink = () => {
           <li>
             <Link
               href="/villa"
-              className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0"
+              className={clsx(
+                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
+                isScrolled ? "text-gray-800" : "text-gray-100"
+              )}
             >
               Villa
             </Link>
@@ -48,7 +55,10 @@ const Navlink = () => {
           <li>
             <Link
               href="/reservation"
-              className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0"
+              className={clsx(
+                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
+                isScrolled ? "text-gray-800" : "text-gray-100"
+              )}
             >
               Reservasi
             </Link>
