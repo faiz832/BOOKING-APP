@@ -1,6 +1,12 @@
 import Header from "@/components/Header/Header";
 import Image from "next/image";
+import { Metadata } from "next";
 import { IoEyeOutline, IoLocateOutline } from "react-icons/io5";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Who we are",
+};
 
 const AboutPage = () => {
   return (
@@ -12,7 +18,7 @@ const AboutPage = () => {
       />
       <div className="max-w-7xl mx-auto py-20 px-4">
         <div className="grid md:grid-cols-2 gap-8">
-          <Image src="/images/bg.jpg" alt="image" width={650} height={579} />
+          <Image src="/images/bg.jpg" alt="image" width={650} height={679} />
           <div>
             <h1 className="text-5xl font-semibold text-gray-900 mb-4">
               Siapa Kita
@@ -20,7 +26,6 @@ const AboutPage = () => {
             <p className="text-gray-700 py-5">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem
               molestiae voluptatibus voluptates praesentium, officiis quis ea
-              libero inventore enim vel quae minima cum, perspiciatis aliquam?
             </p>
             <ul className="list-item space-y-6 pt-8">
               <li className="flex gap-5">
