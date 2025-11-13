@@ -19,50 +19,22 @@ const Navlink = ({ isScrolled }: { isScrolled: boolean }) => {
         })}
       >
         <ul className="flex flex-col font-semibold text-sm uppercase p-4 mt-4 gap-y-2 rounded bg-gray-50 md:flex-row md:items-center md:space-x-10 md:p-0 md:mt-0 md:border-0 md:bg-transparent">
-          <li>
-            <Link
-              href="/about"
-              className={clsx(
-                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
-                isScrolled ? "text-gray-800" : "text-gray-100"
-              )}
-            >
-              Tentang
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/camp"
-              className={clsx(
-                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
-                isScrolled ? "text-gray-800" : "text-gray-100"
-              )}
-            >
-              Camp
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/villa"
-              className={clsx(
-                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
-                isScrolled ? "text-gray-800" : "text-gray-100"
-              )}
-            >
-              Villa
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/reservation"
-              className={clsx(
-                "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
-                isScrolled ? "text-gray-800" : "text-gray-100"
-              )}
-            >
-              Reservasi
-            </Link>
-          </li>
+          {["Tentang", "Camp", "Villa", "Reservasi"].map((item, idx) => {
+            const href = ["/about", "/camp", "/villa", "/reservation"][idx];
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={clsx(
+                    "block py-2 px-3 hover:bg-gray-100 rounded md:hover:bg-transparent md:p-0",
+                    isScrolled ? "text-gray-800" : "text-gray-100"
+                  )}
+                >
+                  {item}
+                </Link>
+              </li>
+            );
+          })}
           <li className="pt-2 md:pt-0">
             <Link
               href="/login"
